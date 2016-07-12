@@ -1,6 +1,7 @@
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var cors = require('cors');
+var morgan = require('morgan'),
+    bodyParser = require('body-parser'),
+    cors = require('cors');
+
 // setup global middleware here
 
 module.exports = function(app) {
