@@ -9,12 +9,26 @@ var express     = require('express'),
 var app = express();
 
 // Require middleware
-require('./middleware/appMiddlware')(app);
+require('./middleware/middleware')(app);
 
 
 // require passport config
+require('./config/passport')(passport);
+
+
 
 // Setup passport middleware and sessions
+
+
+//express-session
+app.use(session({
+    secret: 'Dev Mountain Secrets',
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // -> Auth
